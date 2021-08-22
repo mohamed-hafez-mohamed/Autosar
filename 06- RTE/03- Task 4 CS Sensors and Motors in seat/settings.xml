@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ToolSettings xmlns:i="http://www.w3.org/2001/XMLSchema-instance" z:Id="1" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns="http://schemas.datacontract.org/2004/07/SAAT.ConfigHandler">
+  <MaxProjectsSaved>5</MaxProjectsSaved>
+  <RecentProjects xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="2" z:Size="2">
+    <d2p1:string z:Id="3">F:\02- Embedded Systems\02- Sprints Courses\02- Autosar\03- tests\04- Task 4 CS Sensors in seat\Sensors.xml</d2p1:string>
+    <d2p1:string z:Id="4">F:\02- Embedded Systems\02- Sprints Courses\02- Autosar\03- tests\03- Task 3 CS Motors in Seat\CSinSeat.xml</d2p1:string>
+  </RecentProjects>
+</ToolSettings>
