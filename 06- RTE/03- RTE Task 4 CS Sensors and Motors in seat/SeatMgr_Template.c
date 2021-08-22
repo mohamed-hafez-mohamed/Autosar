@@ -12,6 +12,67 @@
 
 #include "Rte_SeatMgr.h"
 
+static boolean IsMotorAdjustNeeded( SensorPositionType Position , SensorWeightType Weight , SepMotorStepType* Step) 
+{
+	Boolean AdjustMotor = FALSE;
+	
+	switch (Position)
+	{
+		case SENSOR_POSITION_STEP_0
+		   if ( Weight > 60) 
+			{
+				
+				(*Step) = MOTOR_STEP_PLUS;
+				AdjustMotor = TRUE;			
+					
+			}
+		break ;
+		case SENSOR_POSITION_STEP_1
+		   if ( Weight > 80)  /*Greater than 80 then plus motor move*/
+		   {
+		   	(*Step) = MOTOR_STEP_PLUS;
+		   	AdjustMotor = TRUE;			
+		   			
+		   }
+		   else if( (Weight <= 80) && (Weight >= 60)) 
+		   {	   
+		   	/*No need to Move motor*/ 	   
+		   }
+   
+         else /*weight is less than 60*/
+		   {	   
+		   	(*Step) = MOTOR_STEP_MINUS;   
+		   	AdjustMotor = TRUE;		   				  			  	   
+		   }	 
+		break ; 
+		case SENSOR_POSITION_STEP_2
+		   if ( Weight > 100)  /*Greater than 100 then plus motor move*/
+			{
+				
+				(*Step) = MOTOR_STEP_PLUS;
+				AdjustMotor = TRUE;			
+					
+			}
+			else if( (Weight <= 100) && (Weight >= 80)) 
+			{  
+				/*No need to Move motor*/   
+		   }	
+         else /*weight is less than 80*/
+			{   
+				(*Step) = MOTOR_STEP_MINUS;   
+				AdjustMotor = TRUE;		   				  			     
+			}	
+		break; 
+		case SENSOR_POSITION_STEP_3
+		   if ( Weight < 100)  /*Greater than 100 then plus motor move*/
+			{
+				(*Step) = MOTOR_STEP_MINUS;
+			   AdjustMotor = TRUE;			
+			}
+		break;		
+	}
+	
+}                                 
 
 /**
  *
